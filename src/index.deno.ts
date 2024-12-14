@@ -1,17 +1,4 @@
-let libSuffix = "";
-switch (Deno.build.os) {
-  case "windows":
-    libSuffix = "dll";
-    break;
-  case "darwin":
-    libSuffix = "dylib";
-    break;
-  default:
-    libSuffix = "so";
-    break;
-}
-
-const libPath = `build/libancillary.${libSuffix}`;
+const libPath = `build/libancillary.so`;
 
 const {
   symbols: {

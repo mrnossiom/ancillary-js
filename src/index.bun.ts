@@ -1,6 +1,6 @@
-import { dlopen, FFIType, suffix } from "bun:ffi";
+import { dlopen, FFIType } from "bun:ffi";
 
-const path = `build/libancillary.${suffix}`;
+const path = `build/libancillary.so`;
 
 const {
   symbols: {
