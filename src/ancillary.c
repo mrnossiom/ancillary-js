@@ -1,4 +1,5 @@
 #include <assert.h>
+#include <errno.h>
 #include <fcntl.h>
 #include <stdio.h>
 #include <string.h>
@@ -48,7 +49,7 @@ int ancillary_send_fd(int socket_fd, int fd) {
   memcpy(CMSG_DATA(cmsgp), &fd, sizeof(int));
 
   if (sendmsg(socket_fd, &msgh, 0) == -1)
-    return -1;
+    return -errno;
 
   return 0;
 }
