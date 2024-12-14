@@ -3,8 +3,8 @@
     {
       "target_name": "libancillaire",
       "sources": [
-        "../../src/node.cpp",
-        "../../src/ancillaire.c"
+        "csource/node.cpp",
+        "csource/ancillaire.c"
       ]
     }
   ]

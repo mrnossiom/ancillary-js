@@ -1,4 +1,4 @@
-#include "../result/include/node/node.h"
+#include <node.h>
 
 extern "C" {
   #include "ancillaire.h"

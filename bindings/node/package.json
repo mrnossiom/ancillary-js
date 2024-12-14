@@ -1,7 +1,7 @@
 {
   "name": "ancillaire",
   "description": "",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "keywords": [
     "unix",
     "sockets"
@@ -23,6 +23,9 @@
     "node-gyp-build": "^4.8.4"
   },
   "scripts": {
+    "copyCSources": "mkdir -vp csource/ && cp -r ../../src/* csource/",
+    "prepublishOnly": "npm run copyCSources",
+    "build": "npm run copyCSources && node-gyp-build",
     "install": "node-gyp-build"
   }
 }
