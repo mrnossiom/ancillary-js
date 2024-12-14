@@ -2,7 +2,18 @@
   "name": "ancillary",
   "description": "",
   "version": "0.0.0",
-  "keywords": [],
+  "keywords": [
+    "unix",
+    "sockets"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrnossiom/ancillary-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mrnossiom/ancillary-js/issues"
+  },
+  "homepage": "https://github.com/mrnossiom/ancillary-js#readme",
   "author": "Milo Moisson",
   "license": "CECILL-2.1",
   "main": "index.js",
