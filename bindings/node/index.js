@@ -1,3 +1,3 @@
-import ancillary from "./index.cjs";
+import ancillaire from "./index.cjs";
 
-export default ancillary;
+export default ancillaire;

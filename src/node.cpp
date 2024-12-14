@@ -1,7 +1,7 @@
 #include "../result/include/node/node.h"
 
 extern "C" {
-  #include "ancillary.h"
+  #include "ancillaire.h"
 }
  
 using namespace v8;
@@ -15,7 +15,7 @@ void Version(const FunctionCallbackInfo<Value>& args) {
     return;
   }
 
-  Local<String> result = String::NewFromUtf8(isolate, ancillary_version()).ToLocalChecked();
+  Local<String> result = String::NewFromUtf8(isolate, ancillaire_version()).ToLocalChecked();
   args.GetReturnValue().Set(result);
 }
 
@@ -32,7 +32,7 @@ void SendFd(const FunctionCallbackInfo<Value>& args) {
   int socket_fd = args[0]->ToNumber(context).ToLocalChecked()->Value();
   int fd = args[1]->ToNumber(context).ToLocalChecked()->Value();
 
-  int result = ancillary_send_fd(socket_fd, fd);
+  int result = ancillaire_send_fd(socket_fd, fd);
   args.GetReturnValue().Set(result);
 }
 
@@ -48,7 +48,7 @@ void RecvFd(const FunctionCallbackInfo<Value>& args) {
   v8::Local<v8::Context> context = isolate->GetCurrentContext();
   int socket_fd = args[0]->ToNumber(context).ToLocalChecked()->Value();
 
-  int result = ancillary_recv_fd(socket_fd);
+  int result = ancillaire_recv_fd(socket_fd);
   args.GetReturnValue().Set(result);
 }
  

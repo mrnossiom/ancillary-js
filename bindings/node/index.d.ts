@@ -1,4 +1,4 @@
-declare module "ancillary" {
+declare module "ancillaire" {
   function version(): string;
 
   function sendFd(socket_fd: number, fd: number): number;

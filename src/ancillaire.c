@@ -9,11 +9,11 @@
 #include <sys/un.h>
 #include <unistd.h>
 
-#include "ancillary.h"
+#include "ancillaire.h"
 
-char *ancillary_version(void) { return "libancillary v0.0.0"; }
+char *ancillaire_version(void) { return "libancillaire v0.0.0"; }
 
-int ancillary_send_fd(int socket_fd, int fd) {
+int ancillaire_send_fd(int socket_fd, int fd) {
   // message needs dummy data
   int data = 0xDEADBEEF;
   struct iovec iov = {
@@ -39,7 +39,7 @@ int ancillary_send_fd(int socket_fd, int fd) {
       .msg_controllen = sizeof(control_msg.buf),
   };
 
-  // build control message to pass through ancillary data
+  // build control message to pass through ancillaire data
   // contains a fd
   struct cmsghdr *cmsgp;
   cmsgp = CMSG_FIRSTHDR(&msgh);
@@ -54,7 +54,7 @@ int ancillary_send_fd(int socket_fd, int fd) {
   return 0;
 }
 
-int ancillary_recv_fd(int socket_fd) {
+int ancillaire_recv_fd(int socket_fd) {
   int data;
   int fd;
 

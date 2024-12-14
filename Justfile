@@ -8,8 +8,8 @@ cdebug_flags := "-g -fsanitize=address"
 
 buildc:
     mkdir -p build
-    cc -c {{cflags}} {{cflags}} -o build/libancillary.o src/ancillary.c
-    cc -shared -o build/libancillary.so build/libancillary.o
+    cc -c {{cflags}} {{cflags}} -o build/libancillaire.o src/ancillaire.c
+    cc -shared -o build/libancillaire.so build/libancillaire.o
 
 clean:
 	rm -rd build

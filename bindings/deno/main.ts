@@ -1,30 +1,30 @@
-const libPath = "../../build/libancillary.so";
+const libPath = "../../build/libancillaire.so";
 
 const {
   symbols: {
-    ancillary_version,
-    ancillary_send_fd,
+    ancillaire_version,
+    ancillaire_send_fd,
   },
 } = Deno.dlopen(
   libPath,
   {
-    ancillary_version: {
+    ancillaire_version: {
       parameters: [],
       result: "pointer",
     },
-    ancillary_send_fd: { parameters: ["i32", "i32"], result: "i32" },
+    ancillaire_send_fd: { parameters: ["i32", "i32"], result: "i32" },
   } as const,
 );
 
 function version(): string {
-  const versionPtr = ancillary_version();
-  if (versionPtr == null) throw new Error("got null pointer from ancillary_version");
+  const versionPtr = ancillaire_version();
+  if (versionPtr == null) throw new Error("got null pointer from ancillaire_version");
   return new Deno.UnsafePointerView(versionPtr).getCString();
 }
 
 function sendFd(socket_fd: number, fd: number) {
-  const result = ancillary_send_fd(socket_fd, fd);
-  if (result < 0) throw new Error(`got errno error from ancillary_send_fd: ${-result}`);
+  const result = ancillaire_send_fd(socket_fd, fd);
+  if (result < 0) throw new Error(`got errno error from ancillaire_send_fd: ${-result}`);
 }
 
 // ---
@@ -39,4 +39,4 @@ const listener = await Deno.connect({ path: socketPath, transport: "unix" })
 const HIGHLY_UNSTABLE_SOCKET_FD = 21;
 const STDOUT_FD = 1;
 
-ancillary_send_fd(HIGHLY_UNSTABLE_SOCKET_FD, STDOUT_FD);
+ancillaire_send_fd(HIGHLY_UNSTABLE_SOCKET_FD, STDOUT_FD);

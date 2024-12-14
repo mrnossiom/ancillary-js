@@ -1,5 +1,5 @@
 {
-  "name": "ancillary",
+  "name": "ancillaire",
   "description": "",
   "version": "0.0.0",
   "keywords": [
@@ -8,12 +8,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mrnossiom/ancillary-js.git"
+    "url": "git+https://github.com/mrnossiom/ancillaire-js.git"
   },
   "bugs": {
-    "url": "https://github.com/mrnossiom/ancillary-js/issues"
+    "url": "https://github.com/mrnossiom/ancillaire-js/issues"
   },
-  "homepage": "https://github.com/mrnossiom/ancillary-js#readme",
+  "homepage": "https://github.com/mrnossiom/ancillaire-js#readme",
   "author": "Milo Moisson",
   "license": "CECILL-2.1",
   "main": "index.js",

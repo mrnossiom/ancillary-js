@@ -1,10 +1,10 @@
 {
   "targets": [
     {
-      "target_name": "libancillary",
+      "target_name": "libancillaire",
       "sources": [
         "../../src/node.cpp",
-        "../../src/ancillary.c"
+        "../../src/ancillaire.c"
       ]
     }
   ]

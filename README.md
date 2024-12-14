@@ -6,14 +6,14 @@ JavaScript bindings to UNIX domain sockets ancillary messages
 
 <p align="center">
   <img alt="Nix Powered" src="https://img.shields.io/badge/Nix-Powered-blue?logo=nixos" />
-  <a href="https://wakatime.com/badge/github/mrnossiom/ancillary-js">
-    <img alt="Time spent" src="https://wakatime.com/badge/github/mrnossiom/ancillary-js.svg" />
+  <a href="https://wakatime.com/badge/github/mrnossiom/ancillaire-js">
+    <img alt="Time spent" src="https://wakatime.com/badge/github/mrnossiom/ancillaire-js.svg" />
   </a>
 </p>
 
 # Usage
 
-You can check the current library interface in `src/ancillary.h`
+You can check the current library interface in `src/ancillaire.h`
 
 Both `bun` and `deno` are supported because they can open a shared library (`.so`). 
 
@@ -31,7 +31,7 @@ They include
 ## Building
 
 ```sh
-# Build the libancillary bindings to `build/libancillary.so`.
+# Build the libancillaire bindings to `build/libancillaire.so`.
 just buildc
 ```
 
