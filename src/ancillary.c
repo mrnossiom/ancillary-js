@@ -53,3 +53,45 @@ int ancillary_send_fd(int socket_fd, int fd) {
 
   return 0;
 }
+
+int ancillary_recv_fd(int socket_fd) {
+  int data;
+  int fd;
+
+  struct iovec iov = {
+      .iov_base = &data,
+      .iov_len = sizeof(int),
+  };
+
+  struct msghdr msgh = {
+      .msg_name = NULL,
+      .msg_namelen = 0,
+
+      .msg_iov = &iov,
+      .msg_iovlen = 1,
+  };
+
+  union {
+    char buf[CMSG_SPACE(sizeof(int))];
+    struct cmsghdr align;
+  } control_msg;
+  struct cmsghdr *cmsgp;
+
+  msgh.msg_control = control_msg.buf;
+  msgh.msg_controllen = sizeof(control_msg.buf);
+
+  if (recvmsg(socket_fd, &msgh, 0) == -1)
+    return -1;
+
+  cmsgp = CMSG_FIRSTHDR(&msgh);
+  assert(cmsgp->cmsg_len == CMSG_LEN(sizeof(int)));
+
+  if (cmsgp == NULL || cmsgp->cmsg_len != CMSG_LEN(sizeof(int)) ||
+      cmsgp->cmsg_level != SOL_SOCKET || cmsgp->cmsg_type != SCM_RIGHTS) {
+    errno = EINVAL;
+    return -1;
+  }
+
+  memcpy(&fd, CMSG_DATA(cmsgp), sizeof(int));
+  return fd;
+}

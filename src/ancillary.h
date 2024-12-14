@@ -14,4 +14,11 @@ char *ancillary_version(void);
 // Returns a negative number in case something went wrong.
 int ancillary_send_fd(int socket_fd, int fd);
 
+// TODO
+// 
+// Implements `SCM_RIGHTS` ancillary message type.
+// 
+// Returns a negative number in case something went wrong.
+int ancillary_recv_fd(int socket_fd);
+
 #endif /* ! ANCILLARY_H */
