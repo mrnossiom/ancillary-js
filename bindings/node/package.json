@@ -1,0 +1,17 @@
+{
+  "name": "ancillary",
+  "description": "",
+  "version": "0.0.0",
+  "keywords": [],
+  "author": "Milo Moisson",
+  "license": "CECILL-2.1",
+  "main": "index.js",
+  "type": "module",
+  "types": "index.d.ts",
+  "dependencies": {
+    "node-gyp-build": "^4.8.4"
+  },
+  "scripts": {
+    "install": "node-gyp-build"
+  }
+}
