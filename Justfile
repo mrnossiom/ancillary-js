@@ -3,7 +3,7 @@
 _default:
 	@just --list --unsorted --list-heading '' --list-prefix '—— '
 
-cflags := "-Wall -Wextra -Wvla -pedantic"
+cflags := "-fPIC -Wall -Wextra -Wvla -pedantic"
 cdebug_flags := "-g -fsanitize=address"
 
 buildc:
